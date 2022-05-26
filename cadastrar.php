@@ -6,7 +6,6 @@ define('TITLE', 'Cadastrar noticia');
 use \App\entity\Noticia;
 
 $obNoticia = new Noticia;
-$listaNoticia = $obNoticia::getNoticia();
 
 if (isset($_POST['titulo'], $_POST['descricao'], $_POST['data'], $_POST['autor'], $_POST['status'])) {
     $obNoticia->titulo = $_POST['titulo'];

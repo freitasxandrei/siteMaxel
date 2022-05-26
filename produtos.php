@@ -108,7 +108,9 @@
     <div class="container">
   <div class="row rowandrei">
     <div class="col">
+      <a href="index.php">
      <input type="image" class="iconesmaxel" src="assets/image/loja.jpg" width="120px" height="120px">  
+     </a>
     </div>
     <div class="col">
      <input type="image" class="iconesmaxel" src="assets/image/local.jpg" width="120px" height="120px">  

@@ -1,14 +1,17 @@
-$(document).ready(function(){
-  
-  $("#filtragem").on("change", function() {
-    var value = $(this).val();
-    console.log(value);
-    
-    if(value == 'all') {
-      $('.item').fadeIn();
-    }else {
-      $('.item').hide();
-      $('.item-selecionado-' + value).fadeIn();
-    }
-  });
+// MODAL
+$("#andreiModal").click(function(){
+    $("#modalAndrei").modal('show');
 });
+// CARROSSEL
+$('#carouselExampleIndicators').carousel()
+$('#carouselExampleIndicators').on('slide.bs.carousel', function () {
+})
+// TOAST
+$(document).ready(function(){
+  $('#andreiToast').toast('show');
+});
+// TOOLTIP
+$('[data-toggle="tooltip"]').tooltip(function(){
+  $('#andreiTooltip').tooltip('show');
+});
+  

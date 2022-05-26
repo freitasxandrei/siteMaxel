@@ -15,6 +15,16 @@ if (isset($_GET['status'])) {
 }
 ?>
 
+<?php 
+    require __DIR__.'../../vendor/autoload.php';
+
+    use \App\entity\Noticia;
+
+    $Noticia = Noticia::getNoticia();
+    $obNoticia = new Noticia;
+    // echo "<pre>"; print_r($vaga); echo "</pre>"; exit;
+?>
+
 <?php if ($mensagem != '') { ?>
     <section>
         <?php echo $mensagem; ?>
@@ -31,27 +41,21 @@ if (isset($_GET['status'])) {
 
     <?php } else { ?>
 
-        <form method="get">
+        <section class="mb-5" style="margin-top: 2%;">
+            <form method="get">
+                <div class="row">
+                    <div class="col">
 
-            <div class="row my-4">
-
-
-                <div class="col">
-
-                    <input type="text" placeholder="Buscar por nome!" name="busca" class="form-control" value="<?= $busca ?>">
-
+                        <select class="form-control" name="filtro" id="filtragem" value="">
+                            <option value="all">Todos</option>
+                            <?php foreach ($listaNoticia as $key => $value) { ?>
+                                <option value="<?php echo $value->id; ?>" <?php echo $obNoticia->id == $value->id ? "selected" : ''; ?>> <?php echo $value->id; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </div>
-
-                <div class="col d-flex align-itens-end">
-
-                    <button type="submit" class="btn btn-primary"> Filtrar </button>
-
-                </div>
-
-            </div>
-
-        </form>
-
+            </form>
+        </section>
 
         <div class='card-deck row' style="margin-top: 5%">
             <?php foreach ($Noticia as $key => $value) { ?>
@@ -66,23 +70,16 @@ if (isset($_GET['status'])) {
                             <p class='card-text'><?php echo ($value->status == 's' ? 'Ativo' : 'Inativo'); ?></p>
                             <?php echo $value->data ?></td>
                             <div class="row mt-3">
-                                <div class="col-4">
+                                <div class="col-12 col-lg-5">
                                     <a href="editar.php?id=<?php echo $value->id; ?>">
                                         <button type='button' class='btn btn-success botoes'>Editar</button>
                                     </a>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-12 col-lg-5">
 
                                     <a href="excluir.php?id=<?php echo $value->id; ?>">
                                         <button type='button' class='btn btn-danger botoes'>Excluir</button>
-                                    </a>
-                                </div>
-                                
-                                <div class="col-4">
-
-                                    <a href="">
-                                        <button type='button' class='btn btn-success botoes'>Comprar</button>
                                     </a>
                                 </div>
                             </div>
@@ -92,6 +89,7 @@ if (isset($_GET['status'])) {
                 </div>
             <?php } ?>
         </div>
+
 
     <?php } ?>
 
