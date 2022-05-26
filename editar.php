@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-define('TITLE', 'Editar Noticia');
+define('TITLE', 'Editar Produto');
 
 use \App\Entity\Noticia;
 
@@ -21,13 +21,14 @@ if (!$obNoticia instanceof Noticia) {
     exit;
 }
 //Validação do POST
-if (isset($_POST['titulo'], $_POST['descricao'], $_POST['autor'], $_POST['data'], $_POST['status'])) {
-
-    $obNoticia->titulo = $_POST['titulo'];
+if (isset($_POST['nome'], $_POST['descricao'], $_POST['data_compra'], $_POST['nota_fiscal'], $_POST['preco'], $_POST['quantidade'])) {
+    $obNoticia->nome = $_POST['nome'];
     $obNoticia->descricao = $_POST['descricao'];
-    $obNoticia->autor = $_POST['autor'];
-    $obNoticia->data = $_POST['data'];
-    $obNoticia->status = $_POST['status'];
+    $obNoticia->data_compra = $_POST['data_compra'];
+    $obNoticia->nota_fiscal = $_POST['nota_fiscal'];
+    $obNoticia->preco = $_POST['preco'];
+    $obNoticia->quantidade = $_POST['quantidade'];
+
 
     $obNoticia->atualizar();
     // echo "<pre>"; print_r($obNoticia); echo "</pre>"; exit; 

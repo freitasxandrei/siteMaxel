@@ -19,7 +19,7 @@ class database
      * Nome do banco de dados
      * @var string
      */
-    const NAME = 'noticias';
+    const NAME = 'dbmaxel';
 
     /**
      * Usuário do banco de dados

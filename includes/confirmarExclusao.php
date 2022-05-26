@@ -6,7 +6,7 @@
 
     <form method="post">
         <div class="form-group">
-            <p> Você deseja realmente excluir a noticia <strong><?php echo $obNoticia->titulo; ?> </strong></p>
+            <p> Você deseja realmente excluir a noticia <strong><?php echo $obNoticia->nome; ?> </strong></p>
         </div>
 
         <div class="form-group">

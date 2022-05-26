@@ -17,7 +17,7 @@ class Noticia
      * Título da vaga
      * @var string
      */
-    public $titulo;
+    public $nome;
 
 
     /**
@@ -28,21 +28,27 @@ class Noticia
 
     /**
      * Define se a vaga está ativa ou não
-     * @var string
+     * @var timestamp
      */
-    public $status;
+    public $data_compra;
 
     /**
      * Data de publicação da vaga
-     * @var timestamp
+     * @var int
      */
-    public $data;
+    public $nota_fiscal;
 
     /**
      * Descrição da vaga (pode conter html)
-     * @var string
+     * @var float
      */
-    public $autor;
+    public $preco;
+
+    /**
+    * Descrição da vaga (pode conter html)
+    * @var bigint
+    */
+   public $quantidade;
 
     /**
      * Função para cadastrar a vaga no banco
@@ -55,14 +61,16 @@ class Noticia
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         // Inserir a vaga no bano e retornar o ID
-        $objdatabase = new database('noticias');
+        $objdatabase = new database('produtos');
 
         $this->id = $objdatabase->insert([
-            'titulo' => $this->titulo,
+            'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'data' => $this->data,
-            'autor' => $this->autor,
-            'status' => $this->status,
+            'data_compra' => $this->data_compra,
+            'nota_fiscal' => $this->nota_fiscal,
+            'preco' => $this->preco,
+            'quantidade' => $this->quantidade,
+            
             
         ]);
 
@@ -80,7 +88,7 @@ class Noticia
 
     public static function getNoticia($where = null, $order = null, $limit = null)
     {
-        $objdatabase = new database('noticias');
+        $objdatabase = new database('produtos');
 
         return ($objdatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
     }
@@ -92,7 +100,7 @@ class Noticia
      */
     public static function getNoticias($id)
     {
-        $objdatabase = new database('noticias');
+        $objdatabase = new database('produtos');
 
         return ($objdatabase)->select('id = ' . $id)->fetchObject(self::class);
     }
@@ -102,7 +110,7 @@ class Noticia
      */
     public function excluir()
     {
-        $objdatabase = new database('noticias');
+        $objdatabase = new database('produtos');
 
         return ($objdatabase)->delete('id = ' . $this->id);
     }
@@ -115,14 +123,15 @@ class Noticia
         //Definir a data
         // $this->data = date('Y-m-d H:i:s');
 
-        $objDatabase = new Database('noticias');
+        $objDatabase = new Database('produtos');
 
         return ($objDatabase)->update('id = ' . $this->id, [
-            'titulo' => $this->titulo,
+            'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'autor'=> $this->autor,
-            'status' => $this->status,
-            'data' => $this->data
+            'data_compra' => $this->data_compra,
+            'nota_fiscal' => $this->nota_fiscal,
+            'preco' => $this->preco,
+            'quantidade' => $this->quantidade,
         ]);
     }
 }

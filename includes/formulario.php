@@ -8,7 +8,7 @@
     <form method="POST" class="form-send">
         <div class="form-group">
             <label> Nome </label>
-            <input type="text" required class="form-control" name="titulo" value="<?php echo isset($obNoticia->titulo) ? $obNoticia->titulo : ''; ?>">
+            <input type="text" required class="form-control" name="titulo" value="<?php echo isset($obNoticia->nome) ? $obNoticia->nome : ''; ?>">
         </div>
 
         <div class="form-group">
@@ -17,29 +17,21 @@
         </div>
 
         <div class="form-group">
-            <label> Data </label>
-            <input type="date" required class="form-control" name="data" value="<?php echo isset($obNoticia->data) ? date('Y-m-d', strtotime($obNoticia->data)) : ''; ?>">        
+            <label> Data Compra </label>
+            <input type="date" required class="form-control" name="data_compra" value="<?php echo isset($obNoticia->data_compra) ? date('Y-m-d', strtotime($obNoticia->data_compra)) : ''; ?>">        
         </div>
         <div class="form-group">
-            <label> Autor </label>
-            <textarea class="form-control" required name="autor" rows="5"><?php echo isset($obNoticia->autor) ? $obNoticia->autor : ''; ?> </textarea>
+            <label> Nota Fiscal </label>
+            <textarea class="form-control" type="number" required name="nota_fiscal" rows="5"><?php echo isset($obNoticia->nota_fiscal) ? $obNoticia->nota_fiscal : ''; ?> </textarea>
         </div>
-
         <div class="form-group">
-            <label> Status </label>
-            <div>
-                <div class="form-check form-check-inline">
-                    <label>
-                        <input type="radio" required name="status" value="s" <?php echo isset($obNoticia->status) && $obNoticia->status == 's' ? 'checked' : '';?>> Ativo </input>
-                    </label>
-
-                    <label class="ml-3">
-                        <input type="radio" required name="status" value="n" <?php echo isset($obNoticia->status) && $obNoticia->status == 'n' ? 'checked' : '';?>> Inativo </input>
-                    </label>
-                </div>
-            </div>
+            <label> Preço </label>
+            <textarea class="form-control" type="number" required name="preco" rows="5"><?php echo isset($obNoticia->preco) ? $obNoticia->preco : ''; ?> </textarea>
         </div>
-
+        <div class="form-group">
+            <label> Quantidade </label>
+            <textarea class="form-control" type="number" required name="quantidade" rows="5"><?php echo isset($obNoticia->quantidade) ? $obNoticia->quantidade : ''; ?> </textarea>
+        </div>
         <div class="form-group">
             <button type="submit" class="btn btn-success"> Enviar </button>
         </div>
