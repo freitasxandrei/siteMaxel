@@ -9,7 +9,7 @@
     $filtroStatus = in_array($filtroStatus,['s','n']) ? $filtroStatus : '';
 
     $condicoes = [
-        strlen($busca) ? 'titulo LIKE "%' .str_replace(' ','%',$busca).'%"' : null,
+        strlen($busca) ? 'nome LIKE "%' .str_replace(' ','%',$busca).'%"' : null,
         strlen($filtroStatus) ? 'status = "'.$filtroStatus.'"' : null 
     ];
 

@@ -1,12 +1,10 @@
+</div>
+
 </footer>
       </section>
-      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <footer class="pt-4 pt-md-5 mt-5 border-top bg-dark" id="futer">
         <div class="row andrei">
-          <div class="col-3">
-            <img class="mb-2" src="assets/image/perao.jpg" width="80" height="80">
-            <small class="d-block mb-3 text-muted">© 2022-2023</small>
-          </div>
-          <div class="col-3">
+          <div class="col-4">
             <h5 class="andreifooter"> MAIS </h5>
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Algo legal</a></li>
@@ -17,7 +15,7 @@
               <li><a class="text-muted" href="#">Último item</a></li>
             </ul>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <h5 class="andreifooter"> FONTES </h5>
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Fonte</a></li>
@@ -26,7 +24,7 @@
               <li><a class="text-muted" href="#">Fonte final</a></li>
             </ul>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <h5 class="andreifooter"> SOBRE </h5>
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Equipe</a></li>

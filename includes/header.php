@@ -14,9 +14,11 @@
 
 </head>
 
-<body class="bg-light text-dark">
-  <div class="container">
-    <header class="jumbotron bg-orange andreifooter" style="text-align: center;">
-      <h1 class="display-4" style="color: orange;"> WIKIPEDIA NINJAS </h1>
-      <p class="lead"> Registro de Ninjas! </p>
+<body class="text-dark" style="background-color: #C7A4A4;">
+
+    <header class="jumbotron bg-dark andreifooter" style="text-align: center;">
+      <h1 class="display-4" style="color: orange;"> MAXEL </h1>
+      <p class="lead"> Busque do melhor! </p>
     </header>
+
+    <div class="container"> 

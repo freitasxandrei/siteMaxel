@@ -31,6 +31,10 @@ if (isset($_GET['status'])) {
     </section>
 <?php } ?>
 
+<nav class="navbar1 navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1"> <b> LOJA! </b> </span>
+    </nav>
+
 <section>
     <a href="cadastrar">
         <button class="btn btn-success"> Cadastrar </button>

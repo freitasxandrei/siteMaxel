@@ -8,7 +8,7 @@
     <form method="POST" class="form-send">
         <div class="form-group">
             <label> Nome </label>
-            <input type="text" required class="form-control" name="titulo" value="<?php echo isset($obNoticia->nome) ? $obNoticia->nome : ''; ?>">
+            <input type="text" required class="form-control" name="nome" value="<?php echo isset($obNoticia->nome) ? $obNoticia->nome : ''; ?>">
         </div>
 
         <div class="form-group">

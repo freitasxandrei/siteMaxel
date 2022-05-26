@@ -40,13 +40,13 @@ class Noticia
 
     /**
      * Descrição da vaga (pode conter html)
-     * @var float
+     * @var int
      */
     public $preco;
 
     /**
     * Descrição da vaga (pode conter html)
-    * @var bigint
+    * @var int
     */
    public $quantidade;
 
