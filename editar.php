@@ -7,7 +7,7 @@ use \App\Entity\Noticia;
 
 //Validação do ID
 if (!isset($_GET['id'])  || !is_numeric($_GET['id'])) {
-    header('location: index.php?status=error');
+    header('location: indexProdutos.php?status=error');
     exit;
 }
 
@@ -17,7 +17,7 @@ $obNoticia = Noticia::getNoticias($_GET['id']);
 
 //Validação da Vaga
 if (!$obNoticia instanceof Noticia) {
-    header('location: index.php?status=error');
+    header('location: indexProdutos.php?status=error');
     exit;
 }
 //Validação do POST
@@ -33,7 +33,7 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['data_compra'], $_POST['no
     $obNoticia->atualizar();
     // echo "<pre>"; print_r($obNoticia); echo "</pre>"; exit; 
 
-    header('location: index.php?status=success');
+    header('location: indexProdutos.php?status=success');
     exit;
 }
 

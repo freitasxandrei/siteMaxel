@@ -4,7 +4,7 @@
 
     // Validação do ID
     if(!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-        header('location: index.php?status=error');
+        header('location: indexProdutos.php?status=error');
         exit;
     }
 
@@ -13,7 +13,7 @@
 
     // Validação da Vaga
     if(!$obNoticia instanceof Noticia) {
-        header('location: index.php?status=error');
+        header('location: indexProdutos.php?status=error');
         exit;
     }
 
@@ -22,7 +22,7 @@
 
         $obNoticia->excluir();
 
-        header('location: index.php?status=success');
+        header('location: indexProdutos.php?status=success');
         exit;
     }
 
