@@ -20,18 +20,22 @@
             <label> Data Compra </label>
             <input type="date" required class="form-control" name="data_compra" value="<?php echo isset($obNoticia->data_compra) ? date('Y-m-d', strtotime($obNoticia->data_compra)) : ''; ?>">        
         </div>
+
         <div class="form-group">
             <label> Nota Fiscal </label>
-            <textarea class="form-control" type="number" required name="nota_fiscal" rows="5"><?php echo isset($obNoticia->nota_fiscal) ? $obNoticia->nota_fiscal : ''; ?> </textarea>
+            <input type="number"  id="estiloInput" required class="form-control" name="nota_fiscal" value="<?php echo isset($obNoticia->nota_fiscal) ? $obNoticia->nota_fiscal : ''; ?>">
         </div>
+
         <div class="form-group">
             <label> Preço </label>
-            <textarea class="form-control" type="number" required name="preco" rows="5"><?php echo isset($obNoticia->preco) ? $obNoticia->preco : ''; ?> </textarea>
+            <input type="number"  id="estiloInput" required class="form-control" name="preco" value="<?php echo isset($obNoticia->preco) ? $obNoticia->preco : ''; ?>">
         </div>
+
         <div class="form-group">
             <label> Quantidade </label>
-            <textarea class="form-control" type="number" required name="quantidade" rows="5"><?php echo isset($obNoticia->quantidade) ? $obNoticia->quantidade : ''; ?> </textarea>
+            <input type="number"  id="estiloInput" required class="form-control" name="quantidade" value="<?php echo isset($obNoticia->quantidade) ? $obNoticia->quantidade : ''; ?>">
         </div>
+
         <div class="form-group">
             <button type="submit" class="btn btn-success"> Enviar </button>
         </div>
